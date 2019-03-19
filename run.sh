@@ -5,4 +5,5 @@ if [ "$?" = "1" ]; then
 fi
 docker run --detach --mount source=jiradb,destination=/var/atlassian/jira -p 8080:8080 -p 8081:8081 yijun/demo-concodese
 id=$(docker ps --filter "publish=8080"  --format "{{.ID}}")
-docker exec -it $id /bin/bash
+docker exec -it $id /bin/bash -c 'cd /concodese/bin && ./UpdateProjectConfigData.sh'
+docker exec -it $id /bin/bash -c 'cd /concodese/bin && ./concodese_service.sh start SERVER_PORT=8081'
