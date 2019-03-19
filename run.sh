@@ -1,2 +1,8 @@
-docker build -t yijun/demo-concodese docker
-docker run --detach --publish 8080:8080 yijun/demo-concodese
+docker build -t yijun/demo-concodese .
+vid=$(docker volume inspect jiradb)
+if [ "$?" = "1" ]; then
+	docker volume create jiradb
+fi
+docker run --detach --mount source=jiradb,destination=/var/atlassian/jira -p 8080:8080 yijun/demo-concodese
+id=$(docker ps --filter "publish=8080"  --format "{{.ID}}")
+docker exec -it $id /bin/bash
