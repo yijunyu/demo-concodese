@@ -32,7 +32,7 @@ Could the following two constants in Widget.java be changed to something smaller
 * Add the following URL to "Settings > System > Webhooks" 
 
 ```
-http://localhost:8081/ConCodeSe/searchAndRank/${project.id}/${project.key}/${issue.id}/${issue.key}
+http://concodese:8081/ConCodeSe/searchAndRank/${project.id}/${project.key}/${issue.id}/${issue.key}
 ```
 
 * Add the following Event to "Settings > System > Webhooks" 
