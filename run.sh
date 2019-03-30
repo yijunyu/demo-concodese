@@ -3,7 +3,6 @@ docker build -t yijun/jiradb jiradb
 vid=$(docker volume inspect jiradb)
 if [ "$?" = "1" ]; then
 	docker volume create jiradb
-	docker run --rm -i --entrypoint sh -e jiradb:/e -v jiradb:/var/atlassian/jira yijun/jiradb -c "cp -r /var/atlassian/jira/* /e/"
 fi
 id=$(docker ps --filter "publish=8080"  --format "{{.ID}}")
 if [ "$id" != "" ]; then
