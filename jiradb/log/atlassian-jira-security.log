@@ -44,3 +44,10 @@
 2019-03-31 05:59:58,036 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [19blcnp] destroyed for 'yijunyu'
 2019-03-31 05:59:58,037 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [1kvtfgm] destroyed for 'yijunyu'
 2019-03-31 05:59:58,038 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [11wgqrl] destroyed for 'yijunyu'
+2019-03-31 06:04:07,212 http-nio-8080-exec-2      HttpSession created [esf9er]
+2019-03-31 06:05:07,127 JIRA-Bootstrap      JIRA 8.0.2 build: 800010 started. You can now access JIRA through your web browser.
+2019-03-31 06:06:15,327 http-nio-8080-exec-12 anonymous 366x13x1 esf9er 172.27.0.1 /rest/gadget/1.0/login HttpSession [esf9er] destroyed for 'anonymous'
+2019-03-31 06:06:15,329 http-nio-8080-exec-12 anonymous 366x13x1 esf9er 172.27.0.1 /rest/gadget/1.0/login HttpSession created [12njxh4]
+2019-03-31 06:06:15,365 http-nio-8080-exec-12 yijunyu 366x13x1 esf9er 172.27.0.1 /rest/gadget/1.0/login The user 'yijunyu' has PASSED authentication.
+2019-03-31 06:06:19,963 http-nio-8080-exec-13 anonymous 366x34x3 - 127.0.0.1 /rest/webResources/1.0/resources HttpSession created [1bj88ka]
+2019-03-31 06:06:19,981 http-nio-8080-exec-13 yijunyu 366x34x3 1bj88ka 127.0.0.1 /rest/webResources/1.0/resources HttpSession [1bj88ka] destroyed for 'yijunyu'
