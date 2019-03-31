@@ -1,0 +1,46 @@
+2019-03-31 05:28:52,584 http-nio-8080-exec-1      HttpSession created [t94t6a]
+2019-03-31 05:33:48,418 http-nio-8080-exec-22 anonymous 330x9x1 t94t6a 172.20.0.1 /secure/SetupDatabase.jspa JIRA 8.0.2 build: 800010 started. You can now access JIRA through your web browser.
+2019-03-31 05:56:57,309 http-nio-8080-exec-22 anonymous 356x114x1 - 172.20.0.1 /rest/api/2/search HttpSession created [iztw5d]
+2019-03-31 05:56:57,379 http-nio-8080-exec-22 yijunyu 356x114x1 - 172.20.0.1 /rest/api/2/search The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:57:05,579 http-nio-8080-exec-24 anonymous 357x115x1 - 172.20.0.1 /rest/api/2/issue/createmeta HttpSession created [kkng6m]
+2019-03-31 05:57:05,600 http-nio-8080-exec-24 yijunyu 357x115x1 - 172.20.0.1 /rest/api/2/issue/createmeta The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:57:57,513 http-nio-8080-exec-25 anonymous 357x116x1 - 172.20.0.1 /rest/api/2/issue/createmeta HttpSession created [dc3ouu]
+2019-03-31 05:57:57,538 http-nio-8080-exec-25 yijunyu 357x116x1 - 172.20.0.1 /rest/api/2/issue/createmeta The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:57:59,748 http-nio-8080-exec-1 anonymous 357x117x1 - 172.20.0.1 /rest/api/2/user/assignable/search HttpSession created [w7ibf1]
+2019-03-31 05:57:59,770 http-nio-8080-exec-1 yijunyu 357x117x1 - 172.20.0.1 /rest/api/2/user/assignable/search The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:58:00,201 http-nio-8080-exec-4 anonymous 358x118x1 - 172.20.0.1 /rest/greenhopper/1.0/epics HttpSession created [k4rm73]
+2019-03-31 05:58:00,258 http-nio-8080-exec-4 yijunyu 358x118x1 - 172.20.0.1 /rest/greenhopper/1.0/epics The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:58:02,869 http-nio-8080-exec-5 anonymous 358x119x1 - 172.20.0.1 /rest/api/1.0/labels/suggest HttpSession created [a1pstp]
+2019-03-31 05:58:02,884 http-nio-8080-exec-5 yijunyu 358x119x1 - 172.20.0.1 /rest/api/1.0/labels/suggest The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:58:03,040 http-nio-8080-exec-23 anonymous 358x120x1 - 172.20.0.1 /rest/api/2/issue/picker HttpSession created [1kpazm5]
+2019-03-31 05:58:03,068 http-nio-8080-exec-23 yijunyu 358x120x1 - 172.20.0.1 /rest/api/2/issue/picker The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:58:03,202 http-nio-8080-exec-7 anonymous 358x121x1 - 172.20.0.1 /rest/api/2/issueLinkType HttpSession created [1kvtfgm]
+2019-03-31 05:58:03,222 http-nio-8080-exec-7 yijunyu 358x121x1 - 172.20.0.1 /rest/api/2/issueLinkType The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:58:03,797 http-nio-8080-exec-21 anonymous 358x122x1 - 172.20.0.1 /rest/api/2/user/assignable/search HttpSession created [swoob8]
+2019-03-31 05:58:03,817 http-nio-8080-exec-21 yijunyu 358x122x1 - 172.20.0.1 /rest/api/2/user/assignable/search The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:58:19,866 http-nio-8080-exec-3 anonymous 358x123x1 - 172.20.0.1 /rest/api/2/issue HttpSession created [1wdpo0t]
+2019-03-31 05:58:19,891 http-nio-8080-exec-3 yijunyu 358x123x1 - 172.20.0.1 /rest/api/2/issue The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:58:25,849 http-nio-8080-exec-9 anonymous 358x124x1 - 172.20.0.1 /rest/api/2/search HttpSession created [19blcnp]
+2019-03-31 05:58:25,958 http-nio-8080-exec-9 yijunyu 358x124x1 - 172.20.0.1 /rest/api/2/search The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:58:27,991 http-nio-8080-exec-10 anonymous 358x125x1 - 172.20.0.3 /rest/api/2/issue/SWT-1 HttpSession created [kv52sq]
+2019-03-31 05:58:28,006 http-nio-8080-exec-10 yijunyu 358x125x1 - 172.20.0.3 /rest/api/2/issue/SWT-1 The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:58:32,440 http-nio-8080-exec-12 anonymous 358x128x2 - 172.20.0.3 /rest/api/2/issue/10000/comment HttpSession created [1dk9i8c]
+2019-03-31 05:58:32,497 http-nio-8080-exec-12 yijunyu 358x128x2 - 172.20.0.3 /rest/api/2/issue/10000/comment The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:58:33,884 http-nio-8080-exec-16 anonymous 358x129x1 - 172.20.0.3 /rest/api/2/issue/SWT-1 HttpSession created [11wgqrl]
+2019-03-31 05:58:33,907 http-nio-8080-exec-16 yijunyu 358x129x1 - 172.20.0.3 /rest/api/2/issue/SWT-1 The user 'yijunyu' has PASSED authentication.
+2019-03-31 05:58:57,904 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [kkng6m] destroyed for 'yijunyu'
+2019-03-31 05:58:57,934 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [dc3ouu] destroyed for 'yijunyu'
+2019-03-31 05:58:57,940 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [iztw5d] destroyed for 'yijunyu'
+2019-03-31 05:59:01,018 http-nio-8080-exec-13 anonymous 359x154x3 - 127.0.0.1 /rest/webResources/1.0/resources HttpSession created [1mh7t7y]
+2019-03-31 05:59:01,037 http-nio-8080-exec-13 yijunyu 359x154x3 1mh7t7y 127.0.0.1 /rest/webResources/1.0/resources HttpSession [1mh7t7y] destroyed for 'yijunyu'
+2019-03-31 05:59:58,024 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [1kpazm5] destroyed for 'yijunyu'
+2019-03-31 05:59:58,026 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [1dk9i8c] destroyed for 'yijunyu'
+2019-03-31 05:59:58,028 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [k4rm73] destroyed for 'yijunyu'
+2019-03-31 05:59:58,029 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [swoob8] destroyed for 'yijunyu'
+2019-03-31 05:59:58,030 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [a1pstp] destroyed for 'yijunyu'
+2019-03-31 05:59:58,032 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [1wdpo0t] destroyed for 'yijunyu'
+2019-03-31 05:59:58,033 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [w7ibf1] destroyed for 'yijunyu'
+2019-03-31 05:59:58,034 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [kv52sq] destroyed for 'yijunyu'
+2019-03-31 05:59:58,036 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [19blcnp] destroyed for 'yijunyu'
+2019-03-31 05:59:58,037 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [1kvtfgm] destroyed for 'yijunyu'
+2019-03-31 05:59:58,038 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [11wgqrl] destroyed for 'yijunyu'
