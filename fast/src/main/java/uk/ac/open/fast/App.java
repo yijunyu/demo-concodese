@@ -11,13 +11,19 @@ import java.util.TreeSet;
 
 import fast_.Data;
 import fast_.Element;
-import uk.ac.open.crc.intt.IdentifierNameTokeniser;
-import uk.ac.open.crc.intt.IdentifierNameTokeniserFactory;
+// Use INTT for tokenization of identifier names
+// import uk.ac.open.crc.intt.IdentifierNameTokeniser;
+// import uk.ac.open.crc.intt.IdentifierNameTokeniserFactory;
 
 public final class App {
+    // private static IdentifierNameTokeniserFactory factory = new IdentifierNameTokeniserFactory();
+    // private static IdentifierNameTokeniser tokeniser = factory.create();
+    // static {
+    //     factory.setSeparatorCharacters("._$");
+    // }
+
     private App() {
     }
-
     /**
      * Interface to the fast utility.
      * 
@@ -25,15 +31,8 @@ public final class App {
      */
     public static void main(String[] args) {
         callFast(args);
-        // System.out.println(getIdentifierTerms);
-        // System.out.println(getCommentTerms());
     }
 
-    private static IdentifierNameTokeniserFactory factory = new IdentifierNameTokeniserFactory();
-    private static IdentifierNameTokeniser tokeniser = factory.create();
-    static {
-        factory.setSeparatorCharacters("._$");
-    }
     private static Map<String, Set<String>> identifierTerms = new HashMap<String, Set<String>>();
     private static Map<String, Set<String>> commentTerms = new HashMap<String, Set<String>>();
 
@@ -46,6 +45,7 @@ public final class App {
     }
 
     private static String unit = "";
+
     private static void tree(int parent, fast_.Element element) {
         int type = element.type().srcmlKind();
         if (type == 0) {
@@ -57,15 +57,16 @@ public final class App {
                     || parent == fast_.SrcmlKind.TYPE || parent == fast_.SrcmlKind.OPERATOR
                     || parent == fast_.SrcmlKind.ARGUMENT || parent == fast_.SrcmlKind.PSEUDO_PARAMETER_LIST
                     || parent == fast_.SrcmlKind.NAME || parent == fast_.SrcmlKind.SPECIFIER)) {
-                        Set<String> set = identifierTerms.get(unit);
-                        if (set == null) {
-                            set = new TreeSet<String>();
-                        }
-                        set.add(text);
-                        identifierTerms.put(unit, set);
-                    }
+                Set<String> set = identifierTerms.get(unit);
+                if (set == null) {
+                    set = new TreeSet<String>();
+                }
+                set.add(text);
+                identifierTerms.put(unit, set);
+            }
         } else if (type == fast_.SrcmlKind.COMMENT) {
-            // text = text.replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "$1");
+            // text = text.replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)",
+            // "$1");
             text = text.replaceAll("/\\*+", "");
             text = text.replaceAll("\\*+/", "");
             text = text.replaceAll("//+", "");
@@ -75,9 +76,9 @@ public final class App {
             text = text.replaceAll("\\.", "");
             text = text.replaceAll("\n", "");
             text = text.replaceAll("\\*", "");
-            String [] toks = text.split(" ");
-            for (int k = 0; k < toks.length; k++ ) {
-                if (! toks[k].equals("")) {
+            String[] toks = text.split(" ");
+            for (int k = 0; k < toks.length; k++) {
+                if (!toks[k].equals("")) {
                     Set<String> set = commentTerms.get(unit);
                     if (set == null)
                         set = new TreeSet<String>();
@@ -93,9 +94,21 @@ public final class App {
     }
 
     public static void callFast(String[] args) {
+        if (args.length < 1) {
+            // System.err.println("Usage: java -cp
+            // /usr/lib/fast-1.0-SNAPSHOT.jar:/usr/lib/flatbuffers-java-1.10.0.jar:/usr/lib/intt.jar
+            // uk.ac.open.fast.App <folder|flatbuffers> [ids|comments]");
+            System.err.println(
+                    "Usage: java -cp /usr/lib/fast-1.0-SNAPSHOT.jar:/usr/lib/flatbuffers-java-1.10.0.jar uk.ac.open.fast.App <folder|flatbuffers> [ids|comments]");
+        }
         try {
-            Runtime.getRuntime().exec("fast " + args[0] + " /tmp/t.fbs");
-            File file = new File("/tmp/t.fbs");
+            String flatbuffers_filename = "/tmp/t.fbs";
+            if (!args[0].endsWith(".fbs")) {
+                Runtime.getRuntime().exec("fast " + args[0] + " " + flatbuffers_filename);
+            } else {
+                flatbuffers_filename = args[0];
+            }
+            File file = new File(flatbuffers_filename);
             byte[] data = null;
             RandomAccessFile f = null;
             f = new RandomAccessFile(file, "r");
@@ -105,12 +118,20 @@ public final class App {
             ByteBuffer bb = ByteBuffer.wrap(data);
             Data record = Data.getRootAsData(bb);
             Element element = record.RecordType().element();
-            if (element.childLength() > 0 && element.child(0).type().srcmlKind()==0) {
-                for (int i= 0; i < element.childLength(); i++ ) {
+            if (element.childLength() > 0 && element.child(0).type().srcmlKind() == 0) {
+                for (int i = 0; i < element.childLength(); i++) {
                     tree(fast_.SrcmlKind.UNIT, element.child(i));
                 }
             } else {
                 tree(fast_.SrcmlKind.UNIT, element); // singleton
+            }
+            if (args.length > 1 && args[1].equals("ids")) {
+                System.out.println(getIdentifierTerms());
+            } else if (args.length > 1 && args[1].equals("comments")) {
+                System.out.println(getCommentTerms());
+            } else if (args.length > 1) {
+                System.out.println(getIdentifierTerms());
+                System.out.println(getCommentTerms());
             }
         } catch (IOException ex) {
         }
