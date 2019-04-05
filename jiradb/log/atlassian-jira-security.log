@@ -67,3 +67,10 @@
 2019-04-05 13:33:25,135 JIRA-Bootstrap      JIRA 8.1.0 build: 801000 started. You can now access JIRA through your web browser.
 2019-04-05 14:24:37,564 JIRA-Bootstrap      JIRA 8.1.0 build: 801000 started. You can now access JIRA through your web browser.
 2019-04-05 14:49:12,920 JIRA-Bootstrap      JIRA 8.1.0 build: 801000 started. You can now access JIRA through your web browser.
+2019-04-05 15:00:26,407 http-nio-8080-exec-2 anonymous 900x2x1 - 172.22.0.1 /rest/api/2/status HttpSession created [pnpd0e]
+2019-04-05 15:00:27,292 http-nio-8080-exec-2 yijunyu 900x2x1 - 172.22.0.1 /rest/api/2/status The user 'yijunyu' has PASSED authentication.
+2019-04-05 15:01:07,554 http-nio-8080-exec-3 anonymous 901x3x1 - 172.22.0.1 /rest/api/2/project HttpSession created [1ghux8i]
+2019-04-05 15:01:07,801 http-nio-8080-exec-3 yijunyu 901x3x1 - 172.22.0.1 /rest/api/2/project The user 'yijunyu' has PASSED authentication.
+2019-04-05 15:02:21,476 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [1ghux8i] destroyed for 'yijunyu'
+2019-04-05 15:02:21,479 ContainerBackgroundProcessor[StandardEngine[Catalina]]      HttpSession [pnpd0e] destroyed for 'yijunyu'
+2019-04-05 15:23:35,002 JIRA-Bootstrap      JIRA 8.1.0 build: 801000 started. You can now access JIRA through your web browser.

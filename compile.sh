@@ -1,1 +1,1 @@
-javac -cp intt.jar:. Example.java
+javac -cp intt.jar src/Fast.java
