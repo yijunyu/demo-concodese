@@ -25,7 +25,7 @@ public final class App {
      */
     public static void main(String[] args) {
         callFast(args);
-        // System.out.println(getIdentifierTerms);
+        // System.out.println(getIdentifierTerms());
         // System.out.println(getCommentTerms());
     }
 
