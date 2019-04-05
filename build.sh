@@ -1,1 +1,1 @@
-docker build -t yijun/demo-concodese .
+docker build -t yijun/demo-concodese docker

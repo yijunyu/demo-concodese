@@ -76,6 +76,12 @@ public final class App {
             text = text.replaceAll("\\.", "");
             text = text.replaceAll("\n", "");
             text = text.replaceAll("\\*", "");
+            text = text.replaceAll("\t", "");
+            text = text.replaceAll("\\(", "");
+            text = text.replaceAll("\\)", "");
+            text = text.replaceAll("\\+", "");
+            text = text.replaceAll("-", "");
+            text = text.replaceAll("/", "");
             String[] toks = text.split(" ");
             for (int k = 0; k < toks.length; k++) {
                 if (!toks[k].equals("")) {
@@ -104,7 +110,9 @@ public final class App {
         try {
             String flatbuffers_filename = "/tmp/t.fbs";
             if (!args[0].endsWith(".fbs")) {
-                Runtime.getRuntime().exec("fast " + args[0] + " " + flatbuffers_filename);
+                String cmd = "fast " + args[0] + " " + flatbuffers_filename;
+                System.out.println(cmd);
+                Runtime.getRuntime().exec(cmd);
             } else {
                 flatbuffers_filename = args[0];
             }
@@ -136,5 +144,4 @@ public final class App {
         } catch (IOException ex) {
         }
     }
-
 }
