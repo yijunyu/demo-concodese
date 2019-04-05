@@ -1,6 +1,6 @@
 119
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jira-rest-plugin-8.0.2.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/project-templates-plugin-7.0.2_1554370206000.jar
 32
 1
-1554012259377
+1554475643204
 0

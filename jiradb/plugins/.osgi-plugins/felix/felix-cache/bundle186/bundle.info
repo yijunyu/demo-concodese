@@ -1,6 +1,6 @@
 186
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/fugue-4.7.2.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/crowd-rest-plugin-2.10.5-j11_1554369204000.jar
 32
 1
-1554012260336
+1554475645352
 0

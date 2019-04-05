@@ -1,1 +1,1 @@
-file:/var/atlassian/jira/plugins/installed-plugins/jira-bamboo-plugin-8.0.3.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/jira-oauth-service-provider-spi-plugin-8.1.0_1554370410000.jar

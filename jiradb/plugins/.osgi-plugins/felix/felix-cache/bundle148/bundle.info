@@ -1,6 +1,6 @@
 148
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jira-help-tips-8.0.2.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/browser-metrics-plugin-7.0.1_1554369206000.jar
 32
 1
-1554012259764
+1554475644171
 0

@@ -1,6 +1,6 @@
 68
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jira-monitoring-plugin-05.7.3.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/jira-mail-plugin-11.0.1_1554370206000.jar
 32
 1
-1554012257952
+1554475638668
 0

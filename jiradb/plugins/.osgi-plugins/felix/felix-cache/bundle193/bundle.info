@@ -1,6 +1,6 @@
 193
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/httpcore-osgi-4.4.9.jar
+reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/httpclient-osgi-4.5.5.jar
 32
 1
-1554012260408
+1554475645606
 0

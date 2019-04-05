@@ -1,6 +1,6 @@
 184
-reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/crowd-rest-application-management-2.10.5-j11_1551856436000.jar
+reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/com.springsource.org.jdom-1.0.0.jar
 32
 1
-1554012260307
+1554475645269
 0

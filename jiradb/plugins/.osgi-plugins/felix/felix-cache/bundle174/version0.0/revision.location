@@ -1,1 +1,1 @@
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/plugin-jira-1.15.1.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/atlassian-template-renderer-velocity16-plugin-4.0.0_1554369204000.jar

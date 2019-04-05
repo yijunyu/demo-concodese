@@ -51,3 +51,19 @@
 2019-03-31 06:06:15,365 http-nio-8080-exec-12 yijunyu 366x13x1 esf9er 172.27.0.1 /rest/gadget/1.0/login The user 'yijunyu' has PASSED authentication.
 2019-03-31 06:06:19,963 http-nio-8080-exec-13 anonymous 366x34x3 - 127.0.0.1 /rest/webResources/1.0/resources HttpSession created [1bj88ka]
 2019-03-31 06:06:19,981 http-nio-8080-exec-13 yijunyu 366x34x3 1bj88ka 127.0.0.1 /rest/webResources/1.0/resources HttpSession [1bj88ka] destroyed for 'yijunyu'
+2019-03-31 06:22:41,185 http-nio-8080-exec-1      HttpSession created [dxdzsb]
+2019-03-31 06:26:04,773 JIRA-Bootstrap      JIRA 8.0.2 build: 800010 started. You can now access JIRA through your web browser.
+2019-03-31 06:39:54,160 http-nio-8080-exec-6 anonymous 399x11x1 dxdzsb 172.21.0.1 /rest/gadget/1.0/login HttpSession [dxdzsb] destroyed for 'anonymous'
+2019-03-31 06:39:54,162 http-nio-8080-exec-6 anonymous 399x11x1 dxdzsb 172.21.0.1 /rest/gadget/1.0/login HttpSession created [126ylwl]
+2019-03-31 06:39:54,239 http-nio-8080-exec-6 yijunyu 399x11x1 dxdzsb 172.21.0.1 /rest/gadget/1.0/login The user 'yijunyu' has PASSED authentication.
+2019-03-31 06:40:02,654 http-nio-8080-exec-5 anonymous 400x31x3 - 127.0.0.1 /rest/webResources/1.0/resources HttpSession created [kujfo7]
+2019-03-31 06:40:02,674 http-nio-8080-exec-5 yijunyu 400x31x3 kujfo7 127.0.0.1 /rest/webResources/1.0/resources HttpSession [kujfo7] destroyed for 'yijunyu'
+2019-03-31 07:01:00,308 http-nio-8080-exec-16 anonymous 421x37x1 - 172.21.0.1 /rest/api/2/status HttpSession created [1dzhm9p]
+2019-03-31 07:01:00,358 http-nio-8080-exec-16 yijunyu 421x37x1 - 172.21.0.1 /rest/api/2/status The user 'yijunyu' has PASSED authentication.
+2019-03-31 07:01:06,071 http-nio-8080-exec-18 anonymous 421x38x1 - 172.21.0.1 /rest/api/2/project HttpSession created [awofpj]
+2019-03-31 07:01:06,119 http-nio-8080-exec-18 yijunyu 421x38x1 - 172.21.0.1 /rest/api/2/project The user 'yijunyu' has PASSED authentication.
+2019-03-31 07:01:06,375 http-nio-8080-exec-15 anonymous 421x39x1 - 172.21.0.1 /rest/api/2/search HttpSession created [shooef]
+2019-03-31 07:01:06,399 http-nio-8080-exec-15 yijunyu 421x39x1 - 172.21.0.1 /rest/api/2/search The user 'yijunyu' has PASSED authentication.
+2019-04-05 13:33:25,135 JIRA-Bootstrap      JIRA 8.1.0 build: 801000 started. You can now access JIRA through your web browser.
+2019-04-05 14:24:37,564 JIRA-Bootstrap      JIRA 8.1.0 build: 801000 started. You can now access JIRA through your web browser.
+2019-04-05 14:49:12,920 JIRA-Bootstrap      JIRA 8.1.0 build: 801000 started. You can now access JIRA through your web browser.

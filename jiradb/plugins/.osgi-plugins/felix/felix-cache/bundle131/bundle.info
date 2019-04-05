@@ -1,6 +1,6 @@
 131
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/atlassian-spring-scanner-annotation-2.1.7.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/atlassian-oauth-service-provider-plugin-4.0.2_1554369204000.jar
 32
 1
-1554012259540
+1554475643664
 0

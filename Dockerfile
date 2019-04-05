@@ -7,6 +7,8 @@ COPY projects /concodese/projects
 COPY log /concodese/log
 COPY sample /concodese/sample
 COPY doc /concodese/doc
+COPY intt.jar /usr/lib/intt.jar
+COPY Example.class /usr/lib/Example.class
 RUN cd /concodese/bin && ./UpdateProjectConfigData.sh
 WORKDIR /concodese/bin
 EXPOSE 8081

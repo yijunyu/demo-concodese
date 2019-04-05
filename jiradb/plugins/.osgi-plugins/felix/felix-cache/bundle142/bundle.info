@@ -1,6 +1,6 @@
 142
-reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/atlassian-whitelist-core-plugin-4.0.7_1551856438000.jar
+reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/atlassian-whitelist-api-plugin-4.0.7.jar
 32
 1
-1554012259675
+1554475643937
 0
