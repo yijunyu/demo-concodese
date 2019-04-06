@@ -1,3 +1,5 @@
+
+
 `# Installation
 
 ```bash
@@ -88,12 +90,16 @@ The identifiers with their position will be shown as
 ```
 where the first column is the filename, the identifiers are associated with a pair of line and column numbers.
 
+# Integration with fast
+
+[![asciicast](https://asciinema.org/a/239275.svg)](https://asciinema.org/a/239275)
+
 ## Example C/C++ programs
 https://github.com/electricalwind/data7
 ```
 go.sh d1_both.c
 ```
 
+
 ## Example C# programs
 
-Firefox
