@@ -111,8 +111,9 @@ public final class App {
             String flatbuffers_filename = "/tmp/t.fbs";
             if (!args[0].endsWith(".fbs")) {
                 String cmd = "fast " + args[0] + " " + flatbuffers_filename;
-                System.out.println(cmd);
-                Runtime.getRuntime().exec(cmd);
+                // System.out.println(cmd);
+                Process p = Runtime.getRuntime().exec(cmd);
+                p.waitFor();
             } else {
                 flatbuffers_filename = args[0];
             }
@@ -141,7 +142,10 @@ public final class App {
                 System.out.println(getIdentifierTerms());
                 System.out.println(getCommentTerms());
             }
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
         } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 }

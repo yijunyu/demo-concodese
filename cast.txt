@@ -1,0 +1,42 @@
+- [x] docker
+# check whether you have installed Docker
+docker version
+
+# check whether there is any container running in the background
+docker ps
+
+- [x] swt
+rm -rf src/SWT
+# clone an example project SWT
+git clone --depth 1 https://github.com/eclipse/eclipse.platform.swt src/SWT
+
+- [x] concodese
+id=$(docker ps --filter "publish=8081"  --format "{{.ID}}")
+if [ "$id" != "" ]; then docker kill $id; fi
+# launch the ConCodeSe service in a container
+docker run --rm --name concodese --net mynet --detach -v /tmp:/tmp -v $(pwd)/src:/projects -w /projects -p 8081:8081 yijun/demo-concodese
+
+# check whether the container is already running
+docker ps
+- [x] concodese2
+# you can also obtain the container ID in this way
+id=$(docker ps --filter "publish=8081"  --format "{{.ID}}") 
+# ssh into the container and check what’s inside the default folder
+docker exec -t $id /bin/bash -c "pwd"
+- [x] concodese3
+id=$(docker ps --filter "publish=8081"  --format "{{.ID}}")
+# Flattening the ASTs of source code in SWT as a flatbuffers binary temporary file
+docker exec -t $id /bin/bash -c "java -Xmx2048m -cp /usr/lib/fast-1.0-SNAPSHOT.jar:/usr/lib/flatbuffers-java-1.10.0.jar uk.ac.open.fast.App SWT"
+# Check where the flatbuffers file is
+docker exec -t $id /bin/bash -c "ls -l /tmp/t.fbs"
+- [x] concodese4
+id=$(docker ps --filter "publish=8081"  --format "{{.ID}}")
+# Get the terms in identifiers from the flatbuffers file, just show the first 5
+docker exec -t $id /bin/bash -c "java -Xmx2048m -cp /usr/lib/fast-1.0-SNAPSHOT.jar:/usr/lib/flatbuffers-java-1.10.0.jar uk.ac.open.fast.App /tmp/t.fbs ids > ids.txt"
+# Get the terms in comments from the flatbuffers file
+docker exec -t $id /bin/bash -c "java -Xmx2048m -cp /usr/lib/fast-1.0-SNAPSHOT.jar:/usr/lib/flatbuffers-java-1.10.0.jar uk.ac.open.fast.App /tmp/t.fbs comments > comments.txt"
+- [x] concodese5
+id=$(docker ps --filter "publish=8081"  --format "{{.ID}}")
+# Show first 256 characters of the two output files
+docker exec -t $id /bin/bash -c "head -c 256 ids.txt"
+docker exec -t $id /bin/bash -c "head -c 256 comments.txt"
