@@ -11,18 +11,36 @@ import java.util.TreeSet;
 
 import fast_.Data;
 import fast_.Element;
-// Use INTT for tokenization of identifier names
-// import uk.ac.open.crc.intt.IdentifierNameTokeniser;
-// import uk.ac.open.crc.intt.IdentifierNameTokeniserFactory;
+
+import uk.ac.open.crc.intt.IdentifierNameTokeniser;
+import uk.ac.open.crc.intt.IdentifierNameTokeniserFactory;
+// import uk.org.facetus.jim.core.FileData;
 
 public final class App {
-    // private static IdentifierNameTokeniserFactory factory = new IdentifierNameTokeniserFactory();
-    // private static IdentifierNameTokeniser tokeniser = factory.create();
-    // static {
-    //     factory.setSeparatorCharacters("._$");
-    // }
+    private static IdentifierNameTokeniserFactory factory = new IdentifierNameTokeniserFactory();
+    private static IdentifierNameTokeniser tokeniser = factory.create();
+    static {
+        factory.setSeparatorCharacters("._$");
+    }
+    private Map<String, Set<String>> identifierTerms = new HashMap<String, Set<String>>();
+    private Map<String, Set<String>> commentTerms = new HashMap<String, Set<String>>();
 
-    private App() {
+    public Map<String, Set<String>> getIdentifierTerms() {
+        return identifierTerms;
+    }
+
+    public Map<String, Set<String>> getCommentTerms() {
+        return commentTerms;
+    }        
+
+    private App(String source) {
+        try {
+            callFast(source);
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
     /**
      * Interface to the fast utility.
@@ -30,23 +48,12 @@ public final class App {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
-        callFast(args);
-    }
-
-    private static Map<String, Set<String>> identifierTerms = new HashMap<String, Set<String>>();
-    private static Map<String, Set<String>> commentTerms = new HashMap<String, Set<String>>();
-
-    public static Map<String, Set<String>> getIdentifierTerms() {
-        return identifierTerms;
-    }
-
-    public static Map<String, Set<String>> getCommentTerms() {
-        return commentTerms;
+        App app = new App(args[0]);
     }
 
     private static String unit = "";
 
-    private static void tree(int parent, fast_.Element element) {
+    private static void tree(App app, int parent, fast_.Element element) {
         int type = element.type().srcmlKind();
         if (type == 0) {
             unit = "/" + element.extra().unit().filename();
@@ -57,12 +64,12 @@ public final class App {
                     || parent == fast_.SrcmlKind.TYPE || parent == fast_.SrcmlKind.OPERATOR
                     || parent == fast_.SrcmlKind.ARGUMENT || parent == fast_.SrcmlKind.PSEUDO_PARAMETER_LIST
                     || parent == fast_.SrcmlKind.NAME || parent == fast_.SrcmlKind.SPECIFIER)) {
-                Set<String> set = identifierTerms.get(unit);
+                Set<String> set = app.identifierTerms.get(unit);
                 if (set == null) {
                     set = new TreeSet<String>();
                 }
                 set.add(text);
-                identifierTerms.put(unit, set);
+                app.identifierTerms.put(unit, set);
             }
         } else if (type == fast_.SrcmlKind.COMMENT) {
             // text = text.replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)",
@@ -85,67 +92,44 @@ public final class App {
             String[] toks = text.split(" ");
             for (int k = 0; k < toks.length; k++) {
                 if (!toks[k].equals("")) {
-                    Set<String> set = commentTerms.get(unit);
+                    Set<String> set = app.commentTerms.get(unit);
                     if (set == null)
                         set = new TreeSet<String>();
                     set.add(toks[k]);
-                    commentTerms.put(unit, set);
+                    app.commentTerms.put(unit, set);
                 }
             }
         }
         if (element.childLength() > 0) {
             for (int i = 0; i < element.childLength(); i++)
-                tree(type, element.child(i));
+                tree(app, type, element.child(i));
         }
     }
 
-    public static void callFast(String[] args) {
-        if (args.length < 1) {
-            // System.err.println("Usage: java -cp
-            // /usr/lib/fast-1.0-SNAPSHOT.jar:/usr/lib/flatbuffers-java-1.10.0.jar:/usr/lib/intt.jar
-            // uk.ac.open.fast.App <folder|flatbuffers> [ids|comments]");
-            System.err.println(
-                    "Usage: java -cp /usr/lib/fast-1.0-SNAPSHOT.jar:/usr/lib/flatbuffers-java-1.10.0.jar uk.ac.open.fast.App <folder|flatbuffers> [ids|comments]");
+    public void callFast(String source) {
+        String fbs_filename = "/tmp/t.fbs";
+        if (!source.endsWith(".fbs")) {
+            String cmd = "fast " + source + " /tmp/t.fbs";
+            Process p = Runtime.getRuntime().exec(cmd);
+            p.waitFor();    
         }
-        try {
-            String flatbuffers_filename = "/tmp/t.fbs";
-            if (!args[0].endsWith(".fbs")) {
-                String cmd = "fast " + args[0] + " " + flatbuffers_filename;
-                // System.out.println(cmd);
-                Process p = Runtime.getRuntime().exec(cmd);
-                p.waitFor();
-            } else {
-                flatbuffers_filename = args[0];
+        File file = new File(fbs_filename);
+        byte[] data = null;
+        RandomAccessFile f = null;
+        f = new RandomAccessFile(file, "r");
+        data = new byte[(int) f.length()];
+        f.readFully(data);
+        f.close();
+        ByteBuffer bb = ByteBuffer.wrap(data);
+        Data record = Data.getRootAsData(bb);
+        Element element = record.RecordType().element();
+        if (element.childLength() > 0 && element.child(0).type().srcmlKind() == 0) {
+            for (int i = 0; i < element.childLength(); i++) {
+                tree(this, fast_.SrcmlKind.UNIT, element.child(i));
             }
-            File file = new File(flatbuffers_filename);
-            byte[] data = null;
-            RandomAccessFile f = null;
-            f = new RandomAccessFile(file, "r");
-            data = new byte[(int) f.length()];
-            f.readFully(data);
-            f.close();
-            ByteBuffer bb = ByteBuffer.wrap(data);
-            Data record = Data.getRootAsData(bb);
-            Element element = record.RecordType().element();
-            if (element.childLength() > 0 && element.child(0).type().srcmlKind() == 0) {
-                for (int i = 0; i < element.childLength(); i++) {
-                    tree(fast_.SrcmlKind.UNIT, element.child(i));
-                }
-            } else {
-                tree(fast_.SrcmlKind.UNIT, element); // singleton
-            }
-            if (args.length > 1 && args[1].equals("ids")) {
-                System.out.println(getIdentifierTerms());
-            } else if (args.length > 1 && args[1].equals("comments")) {
-                System.out.println(getCommentTerms());
-            } else if (args.length > 1) {
-                System.out.println(getIdentifierTerms());
-                System.out.println(getCommentTerms());
-            }
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        } else {
+            tree(this, fast_.SrcmlKind.UNIT, element); // singleton
+        }        
     }
+
 }
