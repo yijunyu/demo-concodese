@@ -29,14 +29,3 @@ id=$(docker ps --filter "publish=8081"  --format "{{.ID}}")
 docker exec -t $id /bin/bash -c "java -Xmx2048m -cp /usr/lib/fast-1.0-SNAPSHOT.jar:/usr/lib/flatbuffers-java-1.10.0.jar uk.ac.open.fast.App SWT"
 # Check where the flatbuffers file is
 docker exec -t $id /bin/bash -c "ls -l /tmp/t.fbs"
-- [x] concodese4
-id=$(docker ps --filter "publish=8081"  --format "{{.ID}}")
-# Get the terms in identifiers from the flatbuffers file, just show the first 5
-docker exec -t $id /bin/bash -c "java -Xmx2048m -cp /usr/lib/fast-1.0-SNAPSHOT.jar:/usr/lib/flatbuffers-java-1.10.0.jar uk.ac.open.fast.App /tmp/t.fbs ids > ids.txt"
-# Get the terms in comments from the flatbuffers file
-docker exec -t $id /bin/bash -c "java -Xmx2048m -cp /usr/lib/fast-1.0-SNAPSHOT.jar:/usr/lib/flatbuffers-java-1.10.0.jar uk.ac.open.fast.App /tmp/t.fbs comments > comments.txt"
-- [x] concodese5
-id=$(docker ps --filter "publish=8081"  --format "{{.ID}}")
-# Show first 256 characters of the two output files
-docker exec -t $id /bin/bash -c "head -c 256 ids.txt"
-docker exec -t $id /bin/bash -c "head -c 256 comments.txt"

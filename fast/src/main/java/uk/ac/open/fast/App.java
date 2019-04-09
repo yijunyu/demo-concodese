@@ -11,7 +11,6 @@ import java.util.TreeSet;
 
 import fast_.Data;
 import fast_.Element;
-
 import uk.ac.open.crc.intt.IdentifierNameTokeniser;
 import uk.ac.open.crc.intt.IdentifierNameTokeniserFactory;
 // import uk.org.facetus.jim.core.FileData;
@@ -40,6 +39,8 @@ public final class App {
             ex.printStackTrace();
         } catch (IOException ex) {
             ex.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();            
         }
     }
     /**
@@ -106,7 +107,7 @@ public final class App {
         }
     }
 
-    public void callFast(String source) {
+    public void callFast(String source) throws Exception {
         String fbs_filename = "/tmp/t.fbs";
         if (!source.endsWith(".fbs")) {
             String cmd = "fast " + source + " /tmp/t.fbs";
@@ -129,7 +130,7 @@ public final class App {
             }
         } else {
             tree(this, fast_.SrcmlKind.UNIT, element); // singleton
-        }        
+        }
     }
 
 }
