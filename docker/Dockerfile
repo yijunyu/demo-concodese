@@ -7,8 +7,6 @@ COPY projects /concodese/projects
 COPY log /concodese/log
 COPY sample /concodese/sample
 COPY doc /concodese/doc
-COPY intt.jar /usr/lib/intt.jar
-COPY flatbuffers-java-1.10.0.jar /usr/lib/flatbuffers-java-1.10.0.jar
 COPY fast-1.0-SNAPSHOT.jar /usr/lib/fast-1.0-SNAPSHOT.jar
 RUN cd /concodese/bin && ./UpdateProjectConfigData.sh
 WORKDIR /concodese/bin

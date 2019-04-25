@@ -13,7 +13,7 @@ public class AppTest {
      */
     @Test
     public void testApp() {
-        App.main(new String[]{"/Users/yy66/Documents/github.com/yijunyu/demo-concodese/fast/src"});
+        App.main(new String[]{"/Users/yy66/Documents/github.com/yijunyu/demo-concodese/fast/src/main/java/uk/ac/open/fast/App.java"});
         assertTrue(true);
     }
 }
