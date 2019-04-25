@@ -86,7 +86,7 @@ fast -ip t.java t.pb
 ```
 The identifiers with their position will be shown as
 ```
- t main(1,6)
+ t; main(1,6)
 ```
 where the first column is the filename, the identifiers are associated with a pair of line and column numbers.
 
@@ -100,6 +100,6 @@ https://github.com/electricalwind/data7
 go.sh d1_both.c
 ```
 
-
 ## Example C# programs
 
+## Example COBOL programs
