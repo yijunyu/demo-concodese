@@ -1,9 +1,10 @@
 package uk.ac.open.fast;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,8 +20,7 @@ public final class App {
     public Map<String, Set<String>> getIdentifierTerms(List<File> files) {
         identifierTerms.clear();
         try {
-            for (File f : files)
-                callFast(f, true);
+            callFast(files, true);
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         } catch (Exception ex) {
@@ -34,8 +34,7 @@ public final class App {
     public Map<String, Set<String>> getCommentTerms(List<File> files) {
         commentTerms.clear();
         try {
-            for (File f : files)
-                callFast(f, false);
+            callFast(files, false);
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         } catch (Exception ex) {
@@ -44,19 +43,7 @@ public final class App {
         return commentTerms;
     }
 
-    private boolean docker_exists;
     public App() {
-        try {
-            Runtime rt = Runtime.getRuntime();
-            Process proc = rt.exec("docker version");
-            proc.waitFor();
-            int exitVal = proc.exitValue();
-            docker_exists = (exitVal == 0);
-        } catch (InterruptedException ex) {
-            docker_exists = false;
-        } catch (IOException ex) {
-            docker_exists = false;
-        }
     }
 
     /**
@@ -83,67 +70,69 @@ public final class App {
         }
     }
 
-    public void callFast(File source, boolean id_or_comment) throws Exception {
-
+    public void callFast(List<File> sources, boolean id_or_comment) throws Exception {
+        File id_file = null;
+        File comment_file = null;
+        if (id_or_comment)
+            id_file = File.createTempFile("tmpIds", ".txt", new File("/tmp"));
+        else
+            comment_file = File.createTempFile("tmpComments", ".txt", new File("/tmp"));
+        File sh_file = File.createTempFile("tmp", ".sh", new File("/tmp"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(sh_file, true));
+        if (id_or_comment)
+            writer.append("echo > " + id_file.getAbsolutePath()+ "\n");
+        else
+            writer.append("echo > " + comment_file.getAbsolutePath()+ "\n");
         File xml_file = File.createTempFile("tmp", ".xml", new File("/tmp"));
         File pb_file = File.createTempFile("tmp", ".pb", new File("/tmp"));
-        String pn = "$(pwd)";
-        if (source.getParentFile() != null)
-            pn = source.getParentFile().getAbsolutePath();
+        for (File source : sources) {
+            writer.append("fast " + source.getAbsolutePath() + " " + xml_file.getAbsolutePath() + "\n");
+            if (id_or_comment) {
+                writer.append("fast -i 1 " + xml_file.getAbsolutePath() + " " + pb_file.getAbsolutePath() + " >> "
+                        + id_file.getAbsolutePath() + "\n");
+            } else {
+                writer.append("fast -i 2 " + xml_file.getAbsolutePath() + " " + pb_file.getAbsolutePath() + " >> "
+                        + comment_file.getAbsolutePath() + "\n");
+            }
+        }
+        writer.close();
         String[] cmd;
-        if (docker_exists) {
-            cmd = new String[] { "docker", "run", "--rm", "-v", pn + ":" + pn, "-v",
-                    xml_file.getParentFile().getAbsolutePath() + ":" + xml_file.getParentFile().getAbsolutePath(), "-i",
-                    "yijun/fast:latest", pn, xml_file.getAbsolutePath() };
-        } else {
-            cmd = new String[] { "fast", pn, xml_file.getAbsolutePath() };
-        }
+        cmd = new String[] { "sh", sh_file.getAbsolutePath() };
         Process p = Runtime.getRuntime().exec(cmd);
-        p.waitFor();
-        if (id_or_comment) {
-            if (docker_exists)
-                cmd = new String[] { "docker", "run", "--rm", "-v",
-                        xml_file.getParentFile().getAbsolutePath() + ":" + xml_file.getParentFile().getAbsolutePath(),
-                        "-v",
-                        pb_file.getParentFile().getAbsolutePath() + ":" + pb_file.getParentFile().getAbsolutePath(),
-                        "-i", "yijun/fast:latest", "-i", "1", xml_file.getAbsolutePath(), pb_file.getAbsolutePath() };
-            else
-                cmd = new String[] { "fast", "-i", "1", xml_file.getAbsolutePath(), pb_file.getAbsolutePath() };
-        } else {
-            if (docker_exists) {
-                cmd = new String[] { "docker", "run", "--rm", "-v",
-                        xml_file.getParentFile().getAbsolutePath() + ":" + xml_file.getParentFile().getAbsolutePath(),
-                        "-v",
-                        pb_file.getParentFile().getAbsolutePath() + ":" + pb_file.getParentFile().getAbsolutePath(),
-                        "-i", "yijun/fast:latest", "-i", "2", xml_file.getAbsolutePath(), pb_file.getAbsolutePath() };
-            } else
-                cmd = new String[] { "fast", "-i", "2", xml_file.getAbsolutePath(), pb_file.getAbsolutePath() };
-        }
-        // System.out.println(String.join(" ", cmd));
-        p = Runtime.getRuntime().exec(cmd);
         p.waitFor();
         xml_file.delete();
         pb_file.delete();
-        InputStream stdin = p.getInputStream();
-        InputStreamReader isr = new InputStreamReader(stdin);
+        sh_file.delete();
+        InputStreamReader isr;
+        if (id_or_comment)
+            isr = new InputStreamReader(new FileInputStream(id_file));
+        else
+            isr = new InputStreamReader(new FileInputStream(comment_file));
         BufferedReader br = new BufferedReader(isr);
         String line = null;
         while ((line = br.readLine()) != null) {
             String[] file_content = line.split(";");
-            String filename = file_content[0];
-            String content = file_content[1];
-            String[] terms = content.split(" ");
-            Set<String> termSet = new TreeSet<String>();
-            for (String t : terms) {
-                String val = t.split("\\(")[0];
-                if (val.length() > 0)
-                    termSet.add(val);
+            if (file_content.length>1) {
+                String filename = file_content[0];
+                String content = file_content[1];
+                String[] terms = content.split(" ");
+                Set<String> termSet = new TreeSet<String>();
+                for (String t : terms) {
+                    String val = t.split("\\(")[0];
+                    if (val.length() > 0)
+                        termSet.add(val);
+                }
+                if (id_or_comment)
+                    identifierTerms.put(filename, termSet);
+                else
+                    commentTerms.put(filename, termSet);    
             }
-            if (id_or_comment)
-                identifierTerms.put(filename, termSet);
-            else
-                commentTerms.put(filename, termSet);
         }
+        isr.close();
+        if (id_or_comment)
+            id_file.delete();
+        else
+            comment_file.delete();
     }
 
 }

@@ -26,6 +26,6 @@ docker exec -t $id /bin/bash -c "pwd"
 - [x] concodese3
 id=$(docker ps --filter "publish=8081"  --format "{{.ID}}")
 # Flattening the ASTs of source code in SWT as a flatbuffers binary temporary file
-docker exec -t $id /bin/bash -c "java -Xmx2048m -cp /usr/lib/fast-1.0-SNAPSHOT.jar:/usr/lib/flatbuffers-java-1.10.0.jar uk.ac.open.fast.App SWT"
+docker exec -t $id /bin/bash -c "java -Xmx2048m -cp /usr/lib/fast-1.0-SNAPSHOT.jar uk.ac.open.fast.App /concodese/projects/SWT/src_v3.1/org/eclipse/swt/SWT.java"
 # Check where the flatbuffers file is
 docker exec -t $id /bin/bash -c "ls -l /tmp/t.fbs"
