@@ -1,6 +1,6 @@
 64
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jira-issue-nav-plugin-9.1.5.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/jira-languages-7.13.3-en_US_1555609280000.jar
 32
 1
-1554502610482
+1556216007724
 0

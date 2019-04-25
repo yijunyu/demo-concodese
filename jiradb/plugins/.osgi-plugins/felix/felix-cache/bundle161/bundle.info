@@ -1,6 +1,6 @@
 161
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jackson-module-scala-2.10-provider-plugin-0.5.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/streams-aggregator-plugin-6.4.8_1555610112000.jar
 32
 1
-1554502616193
+1556216013379
 0

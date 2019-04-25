@@ -1,1 +1,1 @@
-file:/var/atlassian/jira/plugins/installed-plugins/jira-transition-triggers-plugin-8.2.0.jar
+reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jira-workflow-sharing-plugin-2.1.6.jar

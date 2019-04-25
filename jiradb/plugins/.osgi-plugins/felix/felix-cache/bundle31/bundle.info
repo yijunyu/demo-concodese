@@ -1,6 +1,6 @@
 31
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/nekohtml-1.9.12-1.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/embedded-crowd-admin-plugin-2.3.3_1555610112000.jar
 32
 1
-1554502608936
+1556216006514
 0

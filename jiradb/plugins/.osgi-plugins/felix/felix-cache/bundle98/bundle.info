@@ -1,6 +1,6 @@
 98
-file:/var/atlassian/jira/plugins/installed-plugins/jira-development-integration-plugin-5.4.0.jar
+reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jira-importers-github-plugin-3.0.3.jar
 32
 1
-1554502612806
+1556216010196
 0

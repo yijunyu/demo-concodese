@@ -1,6 +1,6 @@
 129
-reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/atlassian-oauth-service-provider-spi-4.0.2_1554368906000.jar
+reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jslibs-1.1.1.jar
 32
 1
-1554502615051
+1556216011863
 0

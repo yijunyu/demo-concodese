@@ -1,6 +1,6 @@
 118
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jira-workflow-sharing-plugin-2.2.3.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/atlassian-bot-killer-1.7.9_1555610112000.jar
 32
 1
-1554502614630
+1556216011280
 0

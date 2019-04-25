@@ -1,6 +1,6 @@
 51
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jira-apdex-plugin-8.1.0.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/jira-application-properties-plugin-7.13.3_1555610112000.jar
 32
 1
-1554502609996
+1556216007264
 0

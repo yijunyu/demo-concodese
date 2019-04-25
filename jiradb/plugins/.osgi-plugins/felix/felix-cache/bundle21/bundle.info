@@ -1,6 +1,6 @@
 21
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/analytics-whitelist-3.68.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/applinks-basicauth-plugin-5.4.12_1555610112000.jar
 32
 1
-1554502608321
+1556216005826
 0

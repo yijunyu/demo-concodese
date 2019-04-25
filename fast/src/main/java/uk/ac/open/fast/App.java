@@ -45,7 +45,7 @@ public final class App {
     }
 
     private boolean docker_exists;
-    private App() {
+    public App() {
         try {
             Runtime rt = Runtime.getRuntime();
             Process proc = rt.exec("docker version");

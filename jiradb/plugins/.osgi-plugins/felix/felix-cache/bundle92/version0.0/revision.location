@@ -1,1 +1,1 @@
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/event-plugin-1.1.5.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/jira-browser-metrics-2.0.14_1555610112000.jar

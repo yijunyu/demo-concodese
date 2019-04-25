@@ -1,6 +1,6 @@
 142
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/atlassian-whitelist-api-plugin-4.0.7.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/base-hipchat-integration-plugin-7.10.3_1555610112000.jar
 32
 1
-1554502615486
+1556216012438
 0

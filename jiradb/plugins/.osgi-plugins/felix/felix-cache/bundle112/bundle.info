@@ -1,6 +1,6 @@
 112
-file:/var/atlassian/jira/plugins/installed-plugins/jira-software-plugin-3.0.2.jar
+reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jira-webhooks-plugin-7.13.3.jar
 32
 1
-1554502614054
+1556216011012
 0

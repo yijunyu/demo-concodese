@@ -1,1 +1,1 @@
-file:/opt/atlassian/jira/atlassian-jira/WEB-INF/osgi-framework-bundles/org.apache.servicemix.bundles.spring-expression-5.0.10.RELEASE_1.jar
+reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/activeobjects-plugin-2.0.0.jar

@@ -1,6 +1,6 @@
 127
-reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/atlassian-oauth-admin-plugin-4.0.2_1554369204000.jar
+reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/atlassian-spring-scanner-annotation-2.0.0.jar
 32
 1
-1554502614991
+1556216011761
 0

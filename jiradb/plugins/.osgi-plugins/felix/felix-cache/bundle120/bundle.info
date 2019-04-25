@@ -1,6 +1,6 @@
 120
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jira-rest-plugin-8.1.0.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/mywork-common-plugin-5.0.3_1555610112000.jar
 32
 1
-1554502614698
+1556216011393
 0

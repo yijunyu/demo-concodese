@@ -1,6 +1,6 @@
 114
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jira-ui-0.2.0.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/project-templates-plugin-6.2.4_1555610112000.jar
 32
 1
-1554502614541
+1556216011084
 0

@@ -1,6 +1,6 @@
 55
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jira-credits-plugin-8.1.0.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/jira-header-plugin-7.13.3_1555610112000.jar
 32
 1
-1554502610093
+1556216007376
 0

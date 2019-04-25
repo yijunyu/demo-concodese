@@ -1,6 +1,6 @@
 94
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/jira-admin-helper-plugin-5.0.1.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/jira-dnd-attachment-plugin-4.4.20_1555610112000.jar
 32
 1
-1554502611994
+1556216010092
 0

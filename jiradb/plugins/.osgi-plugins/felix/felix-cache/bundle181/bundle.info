@@ -1,6 +1,6 @@
 181
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/atlassian-whisper-plugin-2.0.2.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/crowd-rest-application-management-2.10.4_1555610112000.jar
 32
 1
-1554502617141
+1556216014416
 0

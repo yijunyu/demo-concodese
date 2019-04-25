@@ -1,6 +1,6 @@
 128
-reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/atlassian-oauth-consumer-spi-4.0.2_1554368908000.jar
+reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/atlassian-spring-scanner-runtime-2.0.0.jar
 32
 1
-1554502615017
+1556216011813
 0

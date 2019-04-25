@@ -1,6 +1,6 @@
 156
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/remote-link-aggregator-plugin-3.0.0.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/jira-sal-plugin-7.13.3_1555610112000.jar
 32
 1
-1554502615979
+1556216013132
 0

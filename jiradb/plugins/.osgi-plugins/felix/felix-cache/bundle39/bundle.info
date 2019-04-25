@@ -1,6 +1,6 @@
 39
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/atlassian-gadgets-publisher-plugin-4.3.9.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/atlassian-healthcheck-3.0.1_1555610112000.jar
 32
 1
-1554502609370
+1556216006797
 0

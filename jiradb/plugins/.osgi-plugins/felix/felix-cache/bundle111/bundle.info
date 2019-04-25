@@ -1,6 +1,6 @@
 111
-file:/var/atlassian/jira/plugins/installed-plugins/jira-software-monitor-plugin-1.0.0.jar
+reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/workflow-designer-plugin-7.4.13.jar
 32
 1
-1554502614006
+1556216010983
 0

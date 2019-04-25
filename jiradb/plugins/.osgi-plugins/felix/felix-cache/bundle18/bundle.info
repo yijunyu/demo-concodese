@@ -1,6 +1,6 @@
 18
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/activeobjects-plugin-3.0.0.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/atlassian-admin-quicksearch-jira-2.3.3_1555610112000.jar
 32
 1
-1554502607992
+1556216005587
 0

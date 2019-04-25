@@ -1,6 +1,6 @@
 186
-reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/crowd-rest-plugin-2.10.5-j11_1554369204000.jar
+reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/fugue-retry-4.5.0.jar
 32
 1
-1554502617467
+1556216014590
 0

@@ -1,6 +1,6 @@
 163
-reference:file:/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/scala-2.11-provider-plugin-0.13.jar
+reference:file:/var/atlassian/jira/plugins/.osgi-plugins/transformed-plugins/streams-core-plugin-6.4.8_1555610112000.jar
 32
 1
-1554502616292
+1556216013481
 0
