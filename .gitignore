@@ -1,1 +1,12 @@
 /.DS_Store
+*.cast.json
+jiradb/analytics-logs/a8874ad26f88a84e396e2b889eaab126.atlassian-analytics.log.2019-04-06.1.gz
+fast/Hello.java
+fast/args.cbl
+fast/cbl.proto
+fast/t.fbs
+fast/t.pb
+fast/t.xml
+jiradb/*
+src/databases/*
+
