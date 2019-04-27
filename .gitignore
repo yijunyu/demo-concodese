@@ -9,4 +9,6 @@ fast/t.pb
 fast/t.xml
 jiradb/*
 src/databases/*
-
+src/*.txt
+src/derby.log
+src/t.*
