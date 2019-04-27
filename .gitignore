@@ -12,3 +12,4 @@ src/databases/*
 src/*.txt
 src/derby.log
 src/t.*
+src/parse.sh
