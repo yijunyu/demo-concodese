@@ -8,7 +8,6 @@ COPY log /concodese/log
 COPY sample /concodese/sample
 COPY doc /concodese/doc
 COPY fast-1.0-SNAPSHOT.jar /usr/lib/fast-1.0-SNAPSHOT.jar
-RUN cd /concodese/bin && ./UpdateProjectConfigData.sh
 WORKDIR /concodese/bin
 EXPOSE 8081
 ENTRYPOINT [ "sh", "-c", "/usr/bin/java -cp /concodese/config/lic:/concodese/bin/ConCodeSe-1.0.0.jar com.concodese.ConCodeSeJettyServerStarter SERVER_PORT=8081  >> /concodese/log/console_concodese.log"]
