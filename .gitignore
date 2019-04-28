@@ -13,3 +13,8 @@ src/*.txt
 src/derby.log
 src/t.*
 src/parse.sh
+fast/src/main/java/uk/ac/open/fast/App.csv
+fast/src/main/java/uk/ac/open/fast/App.html
+fast/src/main/java/uk/ac/open/fast/App.pb
+fast/src/main/java/uk/ac/open/fast/App.txt
+fast/src/main/java/uk/ac/open/fast/embedding/fast_pretrained_vectors.pkl.gz
