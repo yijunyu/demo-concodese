@@ -22,12 +22,12 @@ case "$1" in
 						echo "Not starting $INSTANZ - instance already running with PID: $Pid"
 				else
 						echo "Starting $INSTANZ"
-						nohup java -cp ../config/lic:ConCodeSe-1.0.0.jar com.concodese.ConCodeSeJettyServerStarter $2 >> $Logfile &
+						nohup java -cp ../config/lic:../config:ConCodeSe-1.0.0.jar com.concodese.ConCodeSeJettyServerStarter $2 >> $Logfile &
 						echo $! > $Pidfile
 				fi
 		else
 				echo "Starting $INSTANZ"
-				nohup java -cp ../config/lic:ConCodeSe-1.0.0.jar com.concodese.ConCodeSeJettyServerStarter $2 >> $Logfile &
+				nohup java -cp ../config/lic:../config:ConCodeSe-1.0.0.jar com.concodese.ConCodeSeJettyServerStarter $2 >> $Logfile &
 				echo $! > $Pidfile
 		fi
 		;;
