@@ -1,7 +1,7 @@
-1- Delete below line in Dockerfile
+[DONE] 1- Delete below line in Dockerfile
 RUN cd /concodese/bin && ./UpdateProjectConfigData.sh
 
-2- Replace following line in Dockerfile so the path to properties file in the config directory is also recognised 
+[DONE] 2- Replace following line in Dockerfile so the path to properties file in the config directory is also recognised 
 ENTRYPOINT [ "sh", "-c", "/usr/bin/java -cp /concodese/config:/concodese/config/lic:/concodese/bin/ConCodeSe-1.0.0.jar com.concodese.ConCodeSeJettyServerStarter SERVER_PORT=8081  >> /concodese/log/console_concodese.log"]
 
 3- file names should be with package id from the content of the file
@@ -22,8 +22,10 @@ token ---> expected
 
 5- make all tokens in the map lower case
  
-6- make local location of the source files parent directory as argument to run.sh
+[DONE] 6- make local location of the source files parent directory as argument to run.sh
 e.g. the left hand side of this /Users/tezcan/projects:/projects can be provided as an argument when executing the run.sh script
 something like $(arg1):/projects where $(arg1) comes from "./run.sh /Users/tezcan/projects"
   
 7- fast.jar needs to be available form maven central repository for build
+
+8- Make docker image of Jira ignore any local (host) installations of Jira. Act as though there is no Jira installed
