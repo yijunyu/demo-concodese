@@ -6,6 +6,7 @@ COPY config /concodese/config
 COPY log /concodese/log
 COPY sample /concodese/sample
 COPY doc /concodese/doc
+RUN chown -R 501 /concodese
 WORKDIR /concodese/bin
 EXPOSE 8081
 ENTRYPOINT [ "sh", "-c", "/usr/bin/java -cp /concodese/config:/concodese/config/lic:/concodese/bin/ConCodeSe-1.0.0.jar com.concodese.ConCodeSeJettyServerStarter SERVER_PORT=8081  >> /concodese/log/console_concodese.log"]
