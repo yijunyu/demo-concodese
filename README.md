@@ -1,6 +1,10 @@
+# License
+
+[ConCodeSe](http://www.concodese.com) is licensed software. The demo license embedded in the container works till 31.12.2019. 
+If you need a license, please contact [Dr Tezcan Dilshener](mailto:tezcan@dilshener.de).
 
 
-`# Installation
+# Installation
 
 ```bash
 ./run.sh
@@ -73,22 +77,6 @@ ConCodeSe Logs:
 ```
 /concodese/log/console_output.log
 ```
-
-## Interfacing concodese with fast
-```bash
-id=$(docker ps --filter "publish=8081"  --format "{{.ID}}") 
-docker exec -it $id /bin/bash
-```
-Inside the demo-cocodese, run 
-```bash
-echo "void main() { }" > t.java
-fast -ip t.java t.pb
-```
-The identifiers with their position will be shown as
-```
- t; main(1,6)
-```
-where the first column is the filename, the identifiers are associated with a pair of line and column numbers.
 
 # Integration with fast
 
