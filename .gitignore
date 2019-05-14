@@ -18,3 +18,16 @@ fast/src/main/java/uk/ac/open/fast/App.html
 fast/src/main/java/uk/ac/open/fast/App.pb
 fast/src/main/java/uk/ac/open/fast/App.txt
 fast/src/main/java/uk/ac/open/fast/embedding/fast_pretrained_vectors.pkl.gz
+databases/derby/ConCodeSeV1.0/seg0/cd1.dat
+derby.log
+databases/derby/*
+docker/fast-1.0-SNAPSHOT.jar
+jiradb/analytics-logs/*
+jiradb/database/*
+jiradb/log/*
+jiradb/monitor/*
+jiradb/analytics-logs/a8874ad26f88a84e396e2b889eaab126.atlassian-analytics.log
+jiradb/database/h2db.mv.db
+jiradb/log/atlassian-jira.log
+jiradb/monitor/ConnectionPoolGraph.rrd4j
+jiradb/monitor/DatabaseReadWritesGraph.rrd4j
