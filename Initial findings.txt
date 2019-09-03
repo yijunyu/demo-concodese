@@ -5,7 +5,7 @@ RUN cd /concodese/bin && ./UpdateProjectConfigData.sh
 ENTRYPOINT [ "sh", "-c", "/usr/bin/java -cp /concodese/config:/concodese/config/lic:/concodese/bin/ConCodeSe-1.0.0.jar com.concodese.ConCodeSeJettyServerStarter SERVER_PORT=8081  >> /concodese/log/console_concodese.log"]
 
 3- file names should be with package id from the content of the file
-e.g. file SearchAndRank.java in /User/tezcan/projects/concodese/src/java/com/concodese/services/ 
+e.g. file SearchAndRank.java in /User/tezcan/projects/concodese/src/java/com/concodese/repository/services/ 
 should have file id in the map as com.concodese.repository.services.SearchAndRank.java
 
 4- some identifiers are not being tokenized fully
@@ -28,4 +28,6 @@ something like $(arg1):/projects where $(arg1) comes from "./run.sh /Users/tezca
   
 7- fast.jar needs to be available form maven central repository for build
 
-8- Make docker image of Jira ignore any local (host) installations of Jira. Act as though there is no Jira installed
+[DONE] 8- Make docker image of Jira ignore any local (host) installations of Jira. Act as though there is no Jira installed
+
+9- Prepare a docker image only with ConCodeSe and Fast (wihout Jira). This image assumes that Jira is already installed on a server.
