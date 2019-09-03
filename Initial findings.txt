@@ -19,7 +19,23 @@ token ---> expected
 "String" ---> "string",
 "serialVersionUID" ---> "serial", "version", "uid",
 "SWTEventObject ---> "swt", "event", "object"
-
+At the end the json for the above file should be as below
+  "org.eclipse.swt.events.TypedEvent.java" : {
+    "widget" : "widget",
+    "data" : "data",
+    "string" : "string",
+    "e" : "e",
+    "display" : "displai",
+    "index" : "index",
+    "version" : "version",
+    "typed" : "type",
+    "uid" : "uid",
+    "serial" : "serial",
+    "time" : "time",
+    "event" : "event",
+    "object" : "object"
+  },
+  
 5- make all tokens in the map lower case
  
 [DONE] 6- make local location of the source files parent directory as argument to run.sh
@@ -30,4 +46,4 @@ something like $(arg1):/projects where $(arg1) comes from "./run.sh /Users/tezca
 
 [DONE] 8- Make docker image of Jira ignore any local (host) installations of Jira. Act as though there is no Jira installed
 
-9- Prepare a docker image only with ConCodeSe and Fast (wihout Jira). This image assumes that Jira is already installed on a server.
+9- Prepare a docker image only with ConCodeSe and Fast (without Jira). This image assumes that Jira is already installed on a server.
