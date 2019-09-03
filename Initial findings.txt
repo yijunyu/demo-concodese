@@ -19,21 +19,21 @@ token ---> expected
 "String" ---> "string",
 "serialVersionUID" ---> "serial", "version", "uid",
 "SWTEventObject ---> "swt", "event", "object"
-At the end the json for the above file should be as below
+At the end the map for the above file should be as below
   "org.eclipse.swt.events.TypedEvent.java" : {
-    "widget" : "widget",
-    "data" : "data",
-    "string" : "string",
-    "e" : "e",
-    "display" : "displai",
-    "index" : "index",
-    "version" : "version",
-    "typed" : "type",
-    "uid" : "uid",
-    "serial" : "serial",
-    "time" : "time",
-    "event" : "event",
-    "object" : "object"
+    "widget",
+    "data",
+    "string",
+    "e",
+    "display",
+    "index",
+    "version",
+    "typed",
+    "uid",
+    "serial",
+    "time",
+    "event",
+    "object"
   },
   
 5- make all tokens in the map lower case
