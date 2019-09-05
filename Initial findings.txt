@@ -4,11 +4,11 @@ RUN cd /concodese/bin && ./UpdateProjectConfigData.sh
 [DONE] 2- Replace following line in Dockerfile so the path to properties file in the config directory is also recognised 
 ENTRYPOINT [ "sh", "-c", "/usr/bin/java -cp /concodese/config:/concodese/config/lic:/concodese/bin/ConCodeSe-1.0.0.jar com.concodese.ConCodeSeJettyServerStarter SERVER_PORT=8081  >> /concodese/log/console_concodese.log"]
 
-3- file names should be with package id from the content of the file
+3- File names should be with package id from the content of the file
 e.g. file SearchAndRank.java in /User/tezcan/projects/concodese/src/java/com/concodese/repository/services/ 
 should have file id in the map as com.concodese.repository.services.SearchAndRank.java
 
-4- some identifiers are not being tokenized fully
+4- Some identifiers are not being tokenized fully
 e.g. in org.eclipse.swt.events.TypedEvents.java following identifiers are not tokenized
 token ---> expected
 -----------------------------------
@@ -19,7 +19,10 @@ token ---> expected
 "String" ---> "string",
 "serialVersionUID" ---> "serial", "version", "uid",
 "SWTEventObject ---> "swt", "event", "object"
-At the end the map for the above file should be as below
+
+At the end the map for the above file should be as below (note: json syntax below is only for illustration purpose)
+FileId: {Set of terms}
+---------------------
   "org.eclipse.swt.events.TypedEvent.java" : {
     "widget",
     "data",
@@ -34,9 +37,9 @@ At the end the map for the above file should be as below
     "time",
     "event",
     "object"
-  },
+  }
   
-5- make all tokens in the map lower case
+5- Make all the terms in the map lower case
  
 [DONE] 6- make local location of the source files parent directory as argument to run.sh
 e.g. the left hand side of this /Users/tezcan/projects:/projects can be provided as an argument when executing the run.sh script
@@ -46,4 +49,4 @@ something like $(arg1):/projects where $(arg1) comes from "./run.sh /Users/tezca
 
 [DONE] 8- Make docker image of Jira ignore any local (host) installations of Jira. Act as though there is no Jira installed
 
-9- Prepare a docker image only with ConCodeSe and Fast (without Jira). This image assumes that Jira is already installed on a server.
+9- Prepare a docker image only with ConCodeSe and Fast (without Jira). This image assumes that Jira is already installed on a server at a client site, which is the case in almost all customers
